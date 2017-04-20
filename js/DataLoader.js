@@ -6,7 +6,7 @@ var DataLoader = {
             }, function() {
                 console.error(`failed to load movies by category`);
             }, function() {
-                console.error(`Timeout: DataLoader.loadMoviesByCategory()`)
+                console.error(`Timeout: DataLoader.loadMoviesByCategory()`);
             }
         );
     },

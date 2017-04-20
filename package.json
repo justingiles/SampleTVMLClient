@@ -1,0 +1,8 @@
+{
+  "name": "sample_tvml_client",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "jshint-stylish": "^2.2.1"
+  }
+}

@@ -13,7 +13,10 @@ providing more information, and eventually launch to a video. The "Search" scree
 ## Running
 
 This application makes the assumption that the `test_data` folder will be run on localhost on port `9001`. If this is not the port you would like, or you desire to run it
-on another device, then you must edit the URLs listed within `DataLoader.js` as necessary. It is my suggestion that they be hosted with a python simple http server: `python -m SimpleHTTPServer 9001`
+on another device, then you must edit the URLs listed within `DataLoader.js` as necessary. It is my suggestion that they be hosted with a python simple http server: 
+```
+python -m SimpleHTTPServer 9001
+```
 
 To actually launch the application, create a new TVML application in Xcode. Quickly update the `AppDelegate.swift` file to include:
 ```
@@ -22,3 +25,10 @@ static let tvBootURL = "\(AppDelegate.tvBaseURL)/application.js"
 ```
 
 On run, your application should run as expected. If you receive a warning you may need to enable the app to connect to your compuer. Open `Info.plist` in your Xcode project and add `App Transport Security Settings` with a key of `Allow Arbitrary Loads` = `Yes`.
+
+## Running the Linter
+```
+npm install -g jshint
+npm install
+jshint --reporter=node_modules/jshint-stylish --exclude ./node_modules .
+```

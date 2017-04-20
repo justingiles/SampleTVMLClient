@@ -42,7 +42,7 @@ var MovieDetails = {
 
         let categoryList = ``;
         for (i = 0; i < categories.length; i++) {
-            categoryList += `<text>${categories[i]}</text>`
+            categoryList += `<text>${categories[i]}</text>`;
         }
         return categoryList;
     },

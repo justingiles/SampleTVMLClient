@@ -22,7 +22,7 @@ var Search = {
         keyboard.onTextChange = function() {
             console.log(`Search text changed ${keyboard.text}`);
             Search.search(keyboard.text);
-        }
+        };
 
         return Search._document;
     },
@@ -38,7 +38,7 @@ var Search = {
                     <img src="${movies[i].img}" width="182" height="274"/>
                     <title>${movies[i].title}</title>
                 </lockup>
-            `
+            `;
         }
         return movieLockups;
     },
@@ -76,13 +76,13 @@ var Search = {
                 "title": "The Sandlot",
                 "img": "https://images-na.ssl-images-amazon.com/images/M/MV5BODllYjM1ODItYjBmOC00MzkwLWJmM2YtMjMyZDU3MGJhNjc4L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
             }
-        ]
+        ];
 
         // perform a regex search to limit our results
         let regExp = new RegExp(query, `i`);
         let matchesText = function(value) {
             return regExp.test(value.title);
-        }
+        };
         movies = (query) ? movies.filter(matchesText) : movies;
 
         // perform the actual creation and insert into the results section

@@ -21,7 +21,7 @@ App.onLaunch = function(options) {
             navigationDocument.presentModal(errorDoc);
         }
     });
-}
+};
 
 // Intentionally left here instead of as its own template.
 // Why? We are showing this template when evaluateScripts
@@ -39,5 +39,5 @@ var createAlert = function(title, description) {
             </document>`;
     let parser = new DOMParser();
     let alertDoc = parser.parseFromString(alertString, `application/xml`);
-    return alertDoc
+    return alertDoc;
 };
