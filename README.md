@@ -24,7 +24,7 @@ static let tvBaseURL = "http://localhost:9001/"
 static let tvBootURL = "\(AppDelegate.tvBaseURL)/application.js"
 ```
 
-On run, your application should run as expected. If you receive a warning you may need to enable the app to connect to your compuer. Open `Info.plist` in your Xcode project and add `App Transport Security Settings` with a key of `Allow Arbitrary Loads` = `Yes`.
+On run, your application should run as expected. If you receive a warning you may need to enable the app to connect to your compuer. Open `Info.plist` in your Xcode project and add `App Transport Security Settings` with a key of `Allow Arbitrary Loads` = `Yes`. Note that this should NOT be used in production code.
 
 ## Running the Linter
 ```
