@@ -3,7 +3,7 @@ var Presenter = {
         if (!Presenter.parser) {
             Presenter.parser = new DOMParser();
         }
-        var doc = Presenter.parser.parseFromString(resource, "application/xml");
+        let doc = Presenter.parser.parseFromString(resource, `application/xml`);
         return doc;
     },
     modalDialogPresenter: function(xml) {
@@ -12,17 +12,16 @@ var Presenter = {
     pushDocument: function(xml) {
         navigationDocument.pushDocument(xml);
     },
-    makeAndPushDocument: function(doc) {
-        var xml = Presenter.makeDocument(doc);
-        xml.addEventListener("select", ActionHandler.processAction);
-        Presenter.pushDocument(xml);
+    presentMenuItem: function(doc, menuItem) {
+        let menuItemDocument = menuItem.parentNode.getFeature(`MenuBarDocument`);
+        menuItemDocument.setDocument(doc, menuItem);
     },
-    playVideo: function(url) {
-        var player = new Player();  
-        var playlist = new Playlist();
-        var mediaItem = new MediaItem("video", url);
+    presentVideo: function(url) {
+        let player = new Player();  
+        let playlist = new Playlist();
+        let mediaItem = new MediaItem(`video`, url);
         player.playlist = playlist;  
         player.playlist.push(mediaItem);  
         player.present();
-    }
-}
+    },
+};
