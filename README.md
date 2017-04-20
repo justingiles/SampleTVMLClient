@@ -1,12 +1,24 @@
-# SampleTVMLClient
+# Sample TVML Client
 
 Sample project to display/play a selection of Movies in TVML.
 
-### Part 1 - Introduction
-Strongly based on the documentation available in the apple developer documentation. Create a two page interface, a collection template that contains one movie that when selected launches a product template with more details about the movie.
 
-### Part 2 - Dynamic Content
-Begin to turn the project away from static content to requesting JSON data to dynamically populate the template with data. This part includes requesting JSON data, populating the category template with the templates and movies, and on movie selection, displaying details about the selected movie.
+## Overview
 
-### Part 3 - Menu Bar and Searching
-Redefine the app by having a menu of "home" and "search". The focus of this part is on the implementation of a menu and the concept of searching. Without a valid endpoint for handling search requests, the searching functionality is faked within the JavaScript.
+This project provides a strong base for a video streaming application that allows for viewing movies by category and provides the structure that can be used for searching.
+Loading the application will display a "Home" screen that loads movies from a JSON file by category and displays them. Selecting a move will launch a details page
+providing more information, and eventually launch to a video. The "Search" screen allows for searching for a movie and selecting a result to launch the same details page.
+
+
+## Running
+
+This application makes the assumption that the `test_data` folder will be run on localhost on port `9001`. If this is not the port you would like, or you desire to run it
+on another device, then you must edit the URLs listed within `DataLoader.js` as necessary. It is my suggestion that they be hosted with a python simple http server: `python -m SimpleHTTPServer 9001`
+
+To actually launch the application, create a new TVML application in Xcode. Quickly update the `AppDelegate.swift` file to include:
+```
+static let tvBaseURL = "http://localhost:9001/"
+static let tvBootURL = "\(AppDelegate.tvBaseURL)/application.js"
+```
+
+On run, your application should run as expected. If you receive a warning you may need to enable the app to connect to your compuer. Open `Info.plist` in your Xcode project and add `App Transport Security Settings` with a key of `Allow Arbitrary Loads` = `Yes`.
